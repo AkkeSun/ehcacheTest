@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns='http://www.ehcache.org/v3'
+        xmlns:jsr107="http://www.ehcache.org/v3/jsr107"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd
+			http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.0.xsd">
+
+    <service>
+        <jsr107:defaults enable-management="true" enable-statistics="true"/>
+    </service>
+
+    <!-- 사용할 캐시의 정보를 입력 -->
+    <cache-template name="myCache1">
+        <expiry>
+            <ttl unit="days">1</ttl> <!-- 캐시 유지시간 -->
+            <!-- <ttl unit="seconds">600</ttl> -->
+        </expiry>
+        <heap>50</heap>  <!-- 메모리 크기 설정 -->
+    </cache-template>
+
+    <cache-template name="myCache2">
+        <expiry>
+            <ttl unit="days">1</ttl>
+        </expiry>
+        <heap>50</heap>
+    </cache-template>
+
+</config>
